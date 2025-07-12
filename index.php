@@ -8,8 +8,6 @@
     <?php include("./utilities/nav.php") ?>
     <!-- Navbar - End -->
 
-    <h1><?= $_SERVER['DOCUMENT_ROOT'] . '/../newadmin/pdf/pdf.php' ?></h1>
-
     <!-- Hero Section - Start -->
     <div class="container-fluid hero homeHero">
         <div class="owl-carousel owl-theme homeHeroCaro">
