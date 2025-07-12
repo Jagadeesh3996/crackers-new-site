@@ -8,6 +8,8 @@
     <?php include("./utilities/nav.php") ?>
     <!-- Navbar - End -->
 
+    <h2><?= $_SERVER['DOCUMENT_ROOT'] . '/newadmin/utilities/db.php' ?></h2>
+
     <!-- Hero Section - Start -->
     <div class="container-fluid hero homeHero">
         <div class="owl-carousel owl-theme homeHeroCaro">
@@ -28,7 +30,6 @@
 
     <!-- Our Products Section - Start -->
     <div class="container-fluid products">
-        <h2><?= $_SERVER['DOCUMENT_ROOT'] . '/newadmin/utilities/db.php' ?></h2>
         <h1 class="smallTitle text-center">Products</h1>
         <h1 class="title text-center">Our Products</h1>
         <div class="container mt-4">
@@ -103,7 +104,7 @@
         </div>
     </div>
     <!-- Our Products Section - End -->
-     
+
     <!-- Our Service Section - Start  -->
     <?php include("service.php") ?>
     <!-- Our Service Section - End  -->
