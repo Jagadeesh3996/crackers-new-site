@@ -1,5 +1,7 @@
 <?php
-include($_SERVER['DOCUMENT_ROOT'] . '/kickvy/admin/utilities/db.php');
+// include($_SERVER['DOCUMENT_ROOT'] . '/kickvy/admin/utilities/db.php');
+include($_SERVER['DOCUMENT_ROOT'] . '/admin/utilities/db.php');
+
 $active = basename($_SERVER['PHP_SELF']);
 $aurl = $protocol . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 ?>

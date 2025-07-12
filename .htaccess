@@ -14,7 +14,7 @@
     RewriteRule ^(.*)$ / [L,R=301]
 
     # Add trailing slash for all other URLs if missing
-    RewriteCond %{HTTP_HOST} ^tn95phoenixcrackers\.com$ [NC]
+    RewriteCond %{HTTP_HOST} ^asrpyropark\.com$ [NC]
     RewriteCond %{REQUEST_URI} !\.(html|php|js|css|jpg|jpeg|png|gif|ico|svg|txt|xml|woff|woff2|ttf|eot|otf|json|zip|pdf|mp4|mp3|webp)$ [NC]
     RewriteCond %{REQUEST_URI} !/$
     RewriteRule ^(.*)$ /$1/ [R=301,L]

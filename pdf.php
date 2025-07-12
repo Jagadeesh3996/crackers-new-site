@@ -1,8 +1,10 @@
 <?php
 try {
-    // require(__DIR__ . '/kickvy/admin/dompdf/autoload.inc.php');
-    include($_SERVER['DOCUMENT_ROOT'] . '/kickvy/admin/utilities/db.php');
-    include($_SERVER['DOCUMENT_ROOT'] . '/kickvy/admin/pdf/pdf.php');
+    // include($_SERVER['DOCUMENT_ROOT'] . '/kickvy/admin/utilities/db.php');
+    // include($_SERVER['DOCUMENT_ROOT'] . '/kickvy/admin/pdf/pdf.php');
+
+    include($_SERVER['DOCUMENT_ROOT'] . '/admin/pdf/pdf.php');
+    include($_SERVER['DOCUMENT_ROOT'] . '/admin/utilities/db.php');
 
     // check url parameter  is set or not
     if (isset($_GET['oid'])) {
