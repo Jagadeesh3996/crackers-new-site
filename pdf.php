@@ -1,5 +1,5 @@
 <?php
-try {
+// try {
     // include($_SERVER['DOCUMENT_ROOT'] . '/kickvy/admin/utilities/db.php');
     // include($_SERVER['DOCUMENT_ROOT'] . '/kickvy/admin/pdf/pdf.php');
 
@@ -23,6 +23,6 @@ try {
         header("Location: $site_url/estimate/");
         exit();
     }
-} catch (Exception $ex) {
-    print_r($ex->getMessage());
-}
+// } catch (Exception $ex) {
+//     print_r($ex->getMessage());
+// }
