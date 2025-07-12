@@ -28,6 +28,7 @@
 
     <!-- Our Products Section - Start -->
     <div class="container-fluid products">
+        <h2><?= $_SERVER['DOCUMENT_ROOT'] . '/newadmin/utilities/db.php' ?></h2>
         <h1 class="smallTitle text-center">Products</h1>
         <h1 class="title text-center">Our Products</h1>
         <div class="container mt-4">
