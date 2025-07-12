@@ -1,0 +1,35 @@
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    RewriteCond %{REQUEST_URI} "/admin"
+    RewriteRule (.*) $1 [L] 
+    
+    # Redirect www to non-www
+    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+    RewriteRule ^ https://%1%{REQUEST_URI}/ [R=301,L]
+    
+    # Redirect /index and /index/ and /index.php/ to homepage
+    RewriteCond %{REQUEST_URI} ^/index(?:\.php)?/?$ [NC]
+    RewriteRule ^(.*)$ / [L,R=301]
+
+    # Add trailing slash for all other URLs if missing
+    RewriteCond %{HTTP_HOST} ^tn95phoenixcrackers\.com$ [NC]
+    RewriteCond %{REQUEST_URI} !\.(html|php|js|css|jpg|jpeg|png|gif|ico|svg|txt|xml|woff|woff2|ttf|eot|otf|json|zip|pdf|mp4|mp3|webp)$ [NC]
+    RewriteCond %{REQUEST_URI} !/$
+    RewriteRule ^(.*)$ /$1/ [R=301,L]
+
+    # Remove .php from the URL when users include it (with or without a trailing slash)
+    RewriteCond %{THE_REQUEST} \s/+(.*?/)?(?:index)?(.*?)\.php(?:[\s/?]|\?[^\ ]*) [NC]
+    RewriteRule ^ /%1%2 [R=301,L,NE]
+
+    # Add .php internally if the file exists without the extension
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}.php -f
+    RewriteRule ^(.+?)/?$ $1.php [L]
+    
+    # Error Document Configuration
+    # ErrorDocument 404 /404.php
+</IfModule>
+
+
