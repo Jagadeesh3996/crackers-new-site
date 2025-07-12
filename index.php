@@ -7,9 +7,7 @@
     <!-- Navbar - Start -->
     <?php include("./utilities/nav.php") ?>
     <!-- Navbar - End -->
-
-    <h2><?= $_SERVER['DOCUMENT_ROOT'] . '/newadmin/utilities/db.php' ?></h2>
-
+     
     <!-- Hero Section - Start -->
     <div class="container-fluid hero homeHero">
         <div class="owl-carousel owl-theme homeHeroCaro">

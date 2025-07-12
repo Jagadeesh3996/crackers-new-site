@@ -3,8 +3,8 @@ try {
     // include($_SERVER['DOCUMENT_ROOT'] . '/kickvy/admin/utilities/db.php');
     // include($_SERVER['DOCUMENT_ROOT'] . '/kickvy/admin/pdf/pdf.php');
 
-    include($_SERVER['DOCUMENT_ROOT'] . '/admin/pdf/pdf.php');
-    include($_SERVER['DOCUMENT_ROOT'] . '/newadmin/utilities/db.php');
+    include('https://asrpyropark.com/newadmin/utilities/db.php');
+    include('https://asrpyropark.com/newadmin/pdf/pdf.php');
 
     // check url parameter  is set or not
     if (isset($_GET['oid'])) {

@@ -1,6 +1,6 @@
 <?php
 // include($_SERVER['DOCUMENT_ROOT'] . '/kickvy/admin/utilities/db.php');
-include($_SERVER['DOCUMENT_ROOT'] . '/newadmin/utilities/db.php');
+include('https://asrpyropark.com/newadmin/utilities/db.php');
 
 // check url parameter  is set or not
 if (isset($_GET['oid'])) {
