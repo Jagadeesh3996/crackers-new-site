@@ -426,16 +426,14 @@
                     'final_total': finalamt,
                     'req_type': 'add',
                 };
-                console.log(formdata);
 
                 $.ajax({
                     type: 'POST',
                     url: '<?= $admin_url ?>/backend/orders/',
                     data: formdata,
                     success: (response) => {
-                        console.log(response);
                         let result = JSON.parse(response);
-                        if (result.status.trim() == "Success") {
+                        if (result.status) {
                             order_id = result.order_id;
                             Swal.fire({
                                 title: 'Order Placed successfully!',
