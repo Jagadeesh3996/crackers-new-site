@@ -34,6 +34,7 @@ if ($item = mysqli_fetch_array($result)) {
 <html lang="en">
 <!-- Head Start -->
 <?php include("./utilities/head.php") ?>
+<link rel="stylesheet" href="<?= $site_url ?>/assets/css/estimate.css">
 <!-- Head END -->
 
 <body>
@@ -45,7 +46,7 @@ if ($item = mysqli_fetch_array($result)) {
 
     <main class="overflow-auto">
         <div class="download">
-            <a href="<?= $site_url ?>/pdf?oid=<?= $oid ?>" target="_blank" class="btn btn-success">Download PDF</a>
+            <a href="<?= $admin_url ?>/pdf/price_estimation_<?= $oid ?>.pdf" target="_blank" class="btn btn-success">Download PDF</a>
             <a href="<?= $site_url ?>/estimate/">
                 <p class="btn btn-danger">Back</p>
             </a>
@@ -168,7 +169,7 @@ if ($item = mysqli_fetch_array($result)) {
             </div>
         </main>
         <div class="bottom">
-            <a href="<?= $site_url ?>/pdf?oid=<?= $oid ?>" target="_blank" class="btn btn-success">Download PDF</a>
+            <a href="<?= $admin_url ?>/pdf/price_estimation_<?= $oid ?>.pdf" target="_blank" class="btn btn-success">Download PDF</a>
         </div>
     </main>
 
