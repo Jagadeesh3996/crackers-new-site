@@ -134,7 +134,8 @@
     <!-- Script End -->
 
     <script>
-        let data = JSON.parse(sessionStorage.getItem("products"));
+        let raw = sessionStorage.getItem("products");
+        let data = JSON.parse(raw ? (raw == 'undefined' ? '[]' : raw) : '[]');
 
         //checking data
         if (!data || data.length == 0)
@@ -418,14 +419,16 @@
                     'whatsapp': whatsapp,
                     'email': email,
                     'address': `${address}, ${state}.`,
+                    'product': sessionStorage.getItem("products"),
                     'refer': $("#refer").val().trim(),
-                    'products': sessionStorage.getItem("products"),
                     'total': Math.ceil(amt),
                     'packing_charge': pcamt,
                     'promotion_discount': pdamt,
                     'final_total': finalamt,
                     'req_type': 'add',
                 };
+                console.log(sessionStorage.getItem("products"));
+                console.log(formdata);
 
                 $.ajax({
                     type: 'POST',

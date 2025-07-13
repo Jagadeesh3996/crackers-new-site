@@ -1,4 +1,9 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 // include($_SERVER['DOCUMENT_ROOT'] . '/kickvy/admin/utilities/db.php');
 include($_SERVER['DOCUMENT_ROOT'] . '/../newadmin/utilities/db.php');
 
@@ -15,16 +20,11 @@ $query = "SELECT * FROM tbl_orders WHERE order_id = '$oid' AND status >= 1 LIMIT
 $result = mysqli_query($conn, $query);
 if ($item = mysqli_fetch_array($result)) {
     $date = $item['date'];
-    $c_name = $item['name'];
-    $c_email = $item['email'];
-    $c_mobile = $item['phone'];
-    $c_whatsapp = $item['whatsapp'];
-    $c_address = $item['address'];
     $total = $item['total'];
     $pcharge = $item['packing_charge'];
     $promodiscount = $item['promotion_discount'];
     $finialtotal = $total + $pcharge - $promodiscount;
-    $product = json_decode($item['products']);
+    $products = json_decode($item['products']);
 } else {
     header("Location: $site_url/estimate/");
     exit();
@@ -32,6 +32,7 @@ if ($item = mysqli_fetch_array($result)) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <!-- Head Start -->
 <?php include("./utilities/head.php") ?>
 <link rel="stylesheet" href="<?= $site_url ?>/assets/css/estimate.css">
@@ -51,7 +52,7 @@ if ($item = mysqli_fetch_array($result)) {
                 <p class="btn btn-danger">Back</p>
             </a>
         </div>
-        <br />
+
         <main class="pd-15" id="main" style="min-width:600px;color: #000000;font-weight: bold;">
             <div class="container">
                 <div class="brd">
@@ -66,24 +67,24 @@ if ($item = mysqli_fetch_array($result)) {
                         <div class="col">Phone : <b><?php echo $site_mobile_number ?>,<?php echo $site_whatsapp_number ?></b></div>
                         <div class="col" style="text-align: end;">Email : <b><?php echo $site_email ?></b></div>
                     </div>
-                    <div class="brd flex" style="flex-direction:column">
-                        <div style="width:40%">
-                            <center>
-                                <p class="fw-20" style="color:#000000;"><b><?php echo $site_name ?></b></p>
-                                <p style="color:#000000;font-weight:700;"><?php echo $site_address ?></p>
-                            </center>
-                        </div>
+                    <div class="brd flex">
+                        <img width="60" src="<?= $site_url ?>/assets/images/logo.png" alt="logo">
+                        <center>
+                            <p class="fw-20 mb-2" style="color:#000000;"><b><?php echo $site_name ?></b></p>
+                            <p class="mb-2" style="color:#000000;font-weight:700;"><?php echo $site_address ?></p>
+                        </center>
                     </div>
                     <div class="brd flex pd-10" style="width:100%">
                         <div style="width:48%" class="rline">
                             <div>
                                 <center><b>Customer Details</b></center>
                             </div>
-                            <div>Name : <b><?php echo $c_name ?></b></div>
-                            <div>Mobile : <b><?php echo $c_mobile ?></b></div>
-                            <div>Whatsapp : <b><?php echo $c_whatsapp ?></b></div>
-                            <div>E-Mail Id : <b><?php echo $c_email ?></b></div>
-                            <div>Address : <b><?php echo $c_address ?></b></div>
+                            <div>Name : <b><?php echo $item['name'] ?></b></div>
+                            <div>Mobile : <b><?php echo $item['phone'] ?></b></div>
+                            <div>Whatsapp : <b><?php echo $item['whatsapp'] ?></b></div>
+                            <div>E-Mail Id : <b><?php echo $item['email'] ?></b></div>
+                            <div>Address : <b><?php echo $item['address'] ?></b></div>
+                            <div>Refer by : <b><?php echo $item['refer'] ?></b></div>
                         </div>
                         <div style="text-align:end;width:48%">
                             <div>
@@ -103,7 +104,6 @@ if ($item = mysqli_fetch_array($result)) {
                                 <td>Code</td>
                                 <td>Product Name</td>
                                 <td>MRP (Rs)</td>
-                                <td>Discount (%)</td>
                                 <td>Quantity</td>
                                 <td>Price (Rs)</td>
                                 <td>Amount (Rs)</td>
@@ -114,19 +114,22 @@ if ($item = mysqli_fetch_array($result)) {
                             $k = 1;
                             $totalqty = 0;
                             $nettotal = 0;
-                            foreach ($product as $key => $prod) {
-                                $totalqty += $prod->p_quantity;
-                                $nettotal += $prod->p_nettotal;
+                            foreach ($products as $key => $prd) {
+                                $totalqty += $prd->p_quantity;
+                                $nettotal += $prd->p_nettotal;
+                                $p_id = $prd->p_id;
+                                $q2 = "SELECT * FROM tbl_product WHERE id = '$p_id' AND status >= 1 LIMIT 1";
+                                $res2 = mysqli_query($conn, $q2);
+                                $item = mysqli_fetch_array($res2);
                             ?>
                                 <tr class="rbd">
                                     <td><?php echo $k ?></td>
-                                    <td><?php echo $prod->p_id ?></td>
-                                    <td><?php echo $prod->p_name ?></td>
-                                    <td><?php echo number_format($prod->p_mrp, 2) ?></td>
-                                    <td><?php echo $prod->p_discount ?></td>
-                                    <td><?php echo $prod->p_quantity ?></td>
-                                    <td><?php echo number_format($prod->p_price, 2) ?></td>
-                                    <td><?php echo number_format($prod->p_total, 2) ?></td>
+                                    <td><?php echo $item['alignment'] ?></td>
+                                    <td><?php echo $prd->p_name ?></td>
+                                    <td><?php echo number_format($prd->p_mrp, 2) ?></td>
+                                    <td><?php echo $prd->p_quantity ?></td>
+                                    <td><?php echo number_format($prd->p_price, 2) ?></td>
+                                    <td><?php echo number_format($prd->p_total, 2) ?></td>
                                 </tr>
                             <?php $k++;
                             } ?>

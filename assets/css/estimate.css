@@ -457,6 +457,9 @@ h1 {
   display: flex;
   justify-content: space-around;
 }
+.download .btn:first-child {
+  margin: 0px !important ;
+}
 .bottom {
   padding: 10px;
   position: fixed;
