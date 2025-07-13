@@ -419,7 +419,7 @@
                     'whatsapp': whatsapp,
                     'email': email,
                     'address': `${address}, ${state}.`,
-                    'product': sessionStorage.getItem("products"),
+                    'products': sessionStorage.getItem("products"),
                     'refer': $("#refer").val().trim(),
                     'total': Math.ceil(amt),
                     'packing_charge': pcamt,

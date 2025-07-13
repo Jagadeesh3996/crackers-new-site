@@ -102,7 +102,7 @@ if ($item = mysqli_fetch_array($result)) {
                             <tr class="rbd bold">
                                 <td>S.No</td>
                                 <td>Code</td>
-                                <td>Product Name</td>
+                                <td colspan="2">Product Name</td>
                                 <td>MRP (Rs)</td>
                                 <td>Quantity</td>
                                 <td>Price (Rs)</td>
@@ -125,7 +125,7 @@ if ($item = mysqli_fetch_array($result)) {
                                 <tr class="rbd">
                                     <td><?php echo $k ?></td>
                                     <td><?php echo $item['alignment'] ?></td>
-                                    <td><?php echo $prd->p_name ?></td>
+                                    <td colspan="2"><?php echo $prd->p_name ?></td>
                                     <td><?php echo number_format($prd->p_mrp, 2) ?></td>
                                     <td><?php echo $prd->p_quantity ?></td>
                                     <td><?php echo number_format($prd->p_price, 2) ?></td>
