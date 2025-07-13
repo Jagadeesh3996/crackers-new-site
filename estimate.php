@@ -13,8 +13,8 @@
   <?php include("./utilities/nav.php") ?>
   <!-- navigation - end -->
 
+  <!-- Main Section - start -->
   <?php if ($site_status == 1) { ?>
-    <!-- Main Section - start -->
     <form method="post">
       <section class="container-lg stick">
 
@@ -280,10 +280,10 @@
       ?>
       <!-- Item Display - end -->
     </form>
-    <!-- Main Section - end -->
   <?php } else { ?>
-    <p>This Sale Ended</p>
+    <h2 class="text-center mt-3">Sale Ended for more information - <a href="<?= $site_url ?>/contact/">Contact Us</a></h2>
   <?php } ?>
+  <!-- Main Section - end -->
 
   <!-- footer - start -->
   <?php include("./utilities/footer.php") ?>

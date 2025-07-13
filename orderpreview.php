@@ -1,9 +1,5 @@
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 // include($_SERVER['DOCUMENT_ROOT'] . '/kickvy/admin/utilities/db.php');
 include($_SERVER['DOCUMENT_ROOT'] . '/../newadmin/utilities/db.php');
 
@@ -43,17 +39,17 @@ if ($item = mysqli_fetch_array($result)) {
     <?php include("./utilities/nav.php") ?>
     <!-- navigation end -->
 
-    <h1 class="cat">Order Review</h1>
+    <h1 class="cat">Order Preview</h1>
 
+    <div class="download">
+        <a href="<?= $admin_url ?>/pdf/price_estimation_<?= $oid ?>.pdf" target="_blank" class="btn btn-success">Download PDF</a>
+        <a href="<?= $site_url ?>/estimate/">
+            <p class="btn btn-danger">Back</p>
+        </a>
+    </div>
     <main class="overflow-auto">
-        <div class="download">
-            <a href="<?= $admin_url ?>/pdf/price_estimation_<?= $oid ?>.pdf" target="_blank" class="btn btn-success">Download PDF</a>
-            <a href="<?= $site_url ?>/estimate/">
-                <p class="btn btn-danger">Back</p>
-            </a>
-        </div>
 
-        <main class="pd-15" id="main" style="min-width:600px;color: #000000;font-weight: bold;">
+        <main class="pd-15 overflow-auto" id="main" style="min-width:600px;color: #000000;font-weight: bold;">
             <div class="container">
                 <div class="brd">
                     <div class="brd flex pdlr">
@@ -171,6 +167,7 @@ if ($item = mysqli_fetch_array($result)) {
                 </div>
             </div>
         </main>
+
         <div class="bottom">
             <a href="<?= $admin_url ?>/pdf/price_estimation_<?= $oid ?>.pdf" target="_blank" class="btn btn-success">Download PDF</a>
         </div>

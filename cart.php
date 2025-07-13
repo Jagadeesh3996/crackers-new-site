@@ -140,6 +140,7 @@
         //checking data
         if (!data || data.length == 0)
             window.location.href = "<?= $site_url ?>/estimate/";
+            
         let amt = 0;
         pcamt = 0;
         pdamt = 0;
@@ -446,7 +447,7 @@
                                 },
                             }).then(() => {
                                 sessionStorage.setItem("products", JSON.stringify([]));
-                                window.location.href = `<?= $site_url ?>/orderreview?oid=${order_id}`;
+                                window.location.href = `<?= $site_url ?>/orderpreview?oid=${order_id}`;
                             })
                         } else {
                             Swal.fire({
