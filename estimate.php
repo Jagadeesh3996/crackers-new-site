@@ -173,6 +173,8 @@
                           <div class="mins flex" onclick="qty('minus', <?php echo $id ?>)"> - </div>
                           <input class="nop inp inp1" type="number" min="1" oninput="calc(<?php echo $id ?>)" id="qty_<?php echo $id ?>" value="" />
                           <div class="plus flex" onclick="qty('plus', <?php echo $id ?>)"> + </div>
+                          <input type="hidden" id="pename_<?php echo $id ?>" value="<?= $name ?> (<?php echo $type ?>)" />
+                          <input type="hidden" id="ptname_<?php echo $id ?>" value="<?= $items['tamil_name'] ?>" />
                           <input type="hidden" id="pimg_<?php echo $id ?>" value="<?php echo htmlspecialchars($items['images'], ENT_QUOTES, 'UTF-8') ?>" />
                           <input type="hidden" id="pvid_<?php echo $id ?>" value="<?php echo $video ?>" />
                           <input type="hidden" id="pid_<?php echo $id ?>" value="<?php echo $id ?>" />
@@ -250,6 +252,8 @@
                           <div class="mins flex" onclick="qty('minus', <?php echo $id ?>)"> - </div>
                           <input type="number" class="nop pinp" oninput="calc(<?php echo $id ?>)" id="qty_<?php echo $id ?>" placeholder="qty" value="" />
                           <div class="plus flex" onclick="qty('plus', <?php echo $id ?>)"> + </div>
+                          <input type="hidden" id="pename_<?php echo $id ?>" value="<?= $name ?> (<?php echo $type ?>)" />
+                          <input type="hidden" id="ptname_<?php echo $id ?>" value="<?= $items['tamil_name'] ?>" />
                           <input type="hidden" id="pimg_<?php echo $id ?>" value="<?php echo htmlspecialchars($items['images'], ENT_QUOTES, 'UTF-8') ?>" />
                           <input type="hidden" id="pvid_<?php echo $id ?>" value="<?php echo $video ?>" />
                           <input type="hidden" id="pid_<?php echo $id ?>" value="<?php echo $id ?>" />
@@ -411,8 +415,8 @@
       $("#qty_" + id).val($("#qty_" + id).val().replace(/[^0-9]/g, '').substring(0, 3));
       let image = $("#pimg_" + id).val();
       let pid = $("#pid_" + id).val();
-      let name = $(".pname_" + id + ":first").text();
-      let type = $("#ptype_" + id).val();
+      // let name = $(".pname_" + id + ":first").text();
+      let name = $("#pename_" + id).val();
       let pmrp = $("#pmrp_" + id).val();
       let disprice = $("#pdisprice_" + id).val();
       let discount = $("#pdiscount_" + id).val();
