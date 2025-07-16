@@ -6,7 +6,7 @@
         <div class="row rowgap">
             <div class="col-lg-6 col-md-6">
                 <iframe
-                    src="https://www.google.com/maps?q=<?php echo $site_address ?>&output=embed"
+                    src="<?php echo $site_googlemap_embed_url ?>"
                     style="border:0;" width="100%" height="400px" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
 

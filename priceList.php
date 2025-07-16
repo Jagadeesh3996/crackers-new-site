@@ -1,10 +1,17 @@
 <?php
-require('admin/dompdf/autoload.inc.php');
-include("admin/utilities/db.php");
+
+// include($_SERVER['DOCUMENT_ROOT'] . '/kickvy/admin/utilities/db.php');
+include($_SERVER['DOCUMENT_ROOT'] . '/../newadmin/utilities/db.php');
+
+require('./dompdf/autoload.inc.php');
 
 use Dompdf\Dompdf;
+use Dompdf\Options;
 
-$dompdf = new Dompdf();
+$options = new Options();
+$options->set('isRemoteEnabled', true);
+$options->set('enable_html5_parser', true);
+$dompdf = new Dompdf($options);
 
 // Create HTML content for the PDF
 $html = '
@@ -38,6 +45,12 @@ $html = '
                             .w-small{
                                 width: 50px;
                             }
+                            .br-0 {
+                                border-right: none !important;
+                            }
+                            .bl-0 {
+                                border-left: none !important;
+                            }
                         </style>
                     </head>
                     <body>
@@ -45,7 +58,8 @@ $html = '
 $html .= '
                             <table class="table-bordered text-center border">
                                 <tr>
-                                    <td colspan="6" class="p-0"><h2 class="bg-danger mb-0 text-white">' . $site_name . ' <a href="' . $site_url . '" target="_blank">(' . $domain . ')</a></h2></td>
+                                    <td colspan="2" class="br-0"><center><img height="100" src="' .  $site_url . '/assets/images/logo.png" alt="logo" ></center></td>
+                                    <td colspan="4" class="p-0 bl-0"><h2 class="mb-0">' . $site_name . '<br/><a href="' . $site_url . '" target="_blank">(' . $domain . ')</a></h2></td>
                                 </tr>
                                 <tr>
                                     <td colspan="6" class="p-0"><h5 class="mb-0">' . $site_address . '</h5></td>
@@ -106,7 +120,6 @@ $html .= '
                 </html>';
 
 // Initialize dompdf
-$dompdf->set_option('enable_html5_parser', TRUE);
 $dompdf->loadHtml($html);
 $dompdf->setPaper('letter', 'portrait');
 $dompdf->render();
