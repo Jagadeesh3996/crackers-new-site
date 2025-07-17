@@ -19,6 +19,7 @@ $html = '
                 <html>
                     <head>
                         <title>Price List</title>
+                        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
                         <link rel="preconnect" href="https://fonts.googleapis.com">
                         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
                         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@100..900&display=swap" rel="stylesheet">
@@ -103,7 +104,7 @@ while ($row = mysqli_fetch_array($presult)) {
             $html .= '
                                                                 <tr>
                                                                     <td class="w-small">' . $sno . '</td>
-                                                                    <td>' . $items['name'] . ' (' . $items['type'] . ') <br />' . $items['tamil_name'] . '</td>
+                                                                    <td>' . $items['name'] . ' (' . $items['type'] . ') <br />' . $items['name'] . '</td>
                                                                     <td><s>' . $mrp . '</s></td>
                                                                     <td>' . $disprice . '</td>
                                                                     <td></td>
