@@ -415,8 +415,8 @@
       $("#qty_" + id).val($("#qty_" + id).val().replace(/[^0-9]/g, '').substring(0, 3));
       let image = $("#pimg_" + id).val();
       let pid = $("#pid_" + id).val();
-      // let name = $(".pname_" + id + ":first").text();
       let name = $("#pename_" + id).val();
+      let tname = $("#ptname_" + id).val();
       let pmrp = $("#pmrp_" + id).val();
       let disprice = $("#pdisprice_" + id).val();
       let discount = $("#pdiscount_" + id).val();
@@ -459,15 +459,16 @@
         useGrouping: true
       }));
 
-      add_product(pid, name, qty, pmrp, disprice, discount, image, subtotal, total, netamt);
+      add_product(pid, name, tname, qty, pmrp, disprice, discount, image, subtotal, total, netamt);
     };
-    const add_product = (id, name, quantity, mrp, price, discount, image, subtotal, total, netamt) => {
+    const add_product = (id, name, tname, quantity, mrp, price, discount, image, subtotal, total, netamt) => {
       let f = 0;
       let productID = id;
       if (productID != "") {
         let newProduct = {
           p_id: id,
           p_name: name,
+          p_tname: tname,
           p_mrp: mrp,
           p_discount: discount,
           p_price: price,
@@ -480,6 +481,7 @@
           if (products[i].p_id === newProduct.p_id) {
             products[i].p_id = newProduct.p_id;
             products[i].p_name = newProduct.p_name;
+            products[i].p_tname = newProduct.p_tname;
             products[i].p_mrp = newProduct.p_mrp;
             products[i].p_discount = newProduct.p_discount;
             products[i].p_price = newProduct.p_price;
