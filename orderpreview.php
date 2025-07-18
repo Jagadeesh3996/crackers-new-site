@@ -42,7 +42,7 @@ if ($item = mysqli_fetch_array($result)) {
     <h1 class="cat">Order Preview</h1>
 
     <div class="download">
-        <a href="<?= $admin_url ?>/pdf/price_estimation_<?= $oid ?>.pdf" target="_blank" class="btn btn-success">Download PDF</a>
+        <a href="<?= $admin_url ?>/pdf/pdf/price_estimation_<?= $oid ?>.pdf" target="_blank" class="btn btn-success">Download PDF</a>
         <a href="<?= $site_url ?>/estimate/">
             <p class="btn btn-danger">Back</p>
         </a>
@@ -169,7 +169,7 @@ if ($item = mysqli_fetch_array($result)) {
         </main>
 
         <div class="bottom">
-            <a href="<?= $admin_url ?>/pdf/price_estimation_<?= $oid ?>.pdf" target="_blank" class="btn btn-success">Download PDF</a>
+            <a href="<?= $admin_url ?>/pdf/pdf/price_estimation_<?= $oid ?>.pdf" target="_blank" class="btn btn-success">Download PDF</a>
         </div>
     </main>
 
