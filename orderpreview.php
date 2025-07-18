@@ -114,14 +114,14 @@ if ($item = mysqli_fetch_array($result)) {
                                 $totalqty += $prd->p_quantity;
                                 $nettotal += $prd->p_nettotal;
                                 $p_id = $prd->p_id;
-                                $q2 = "SELECT * FROM tbl_product WHERE id = '$p_id' AND status >= 1 LIMIT 1";
+                                $q2 = "SELECT alignment FROM tbl_product WHERE id = '$p_id' AND status >= 1 LIMIT 1";
                                 $res2 = mysqli_query($conn, $q2);
                                 $item = mysqli_fetch_array($res2);
                             ?>
                                 <tr class="rbd">
                                     <td><?php echo $k ?></td>
                                     <td><?php echo $item['alignment'] ?></td>
-                                    <td colspan="2"><?php echo $prd->p_name ?><br/><?php echo $prd->p_tname ?></td>
+                                    <td colspan="2"><?php echo $prd->p_name ?></td>
                                     <td><?php echo number_format($prd->p_mrp, 2) ?></td>
                                     <td><?php echo $prd->p_quantity ?></td>
                                     <td><?php echo number_format($prd->p_price, 2) ?></td>
