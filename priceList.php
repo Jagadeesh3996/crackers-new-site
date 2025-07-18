@@ -104,7 +104,7 @@ while ($row = mysqli_fetch_array($presult)) {
             $html .= '
                                                                 <tr>
                                                                     <td class="w-small">' . $sno . '</td>
-                                                                    <td>' . $items['name'] . ' (' . $items['type'] . ')</td>
+                                                                    <td>' . $items['name'] . ' (' . $items['type'] . ') <br />' . $items['tamil_name'] . '</td>
                                                                     <td><s>' . $mrp . '</s></td>
                                                                     <td>' . $disprice . '</td>
                                                                     <td></td>
