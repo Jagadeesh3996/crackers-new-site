@@ -28,11 +28,11 @@
     $("#contact").submit((event) => {
         $("#submitBtn").prop('disabled', true).val("Loading...");
         event.preventDefault();
-        let fname = $("#name").val();
+        let fname = $("#name").val().trim();
         let lname = '';
-        let mail = $("#email").val();
-        let phone = $("#phone").val();
-        let message = $("#message").val();
+        let mail = $("#email").val().trim();
+        let phone = $("#phone").val().trim();
+        let message = $("#message").val().trim();
 
         if (fname == "") {
             Swal.fire({
@@ -66,7 +66,7 @@
             };
             $.ajax({
                 type: 'POST',
-                url: '<?= $site_url ?>/admin/backend/orders/',
+                url: '<?= $admin_url ?>/backend/orders/',
                 data: formdata,
                 success: (response) => {
                     if (response.trim() == "success") {

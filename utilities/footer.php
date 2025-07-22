@@ -28,6 +28,9 @@
                         <a href="<?= $site_url ?>/contact/" class="text-dark">
                             <p class="description">Contact Us</p>
                         </a>
+                        <a href="<?= $site_url ?>/track-order/" class="text-dark">
+                            <p class="description">Track Your Order</p>
+                        </a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">

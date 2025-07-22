@@ -60,8 +60,8 @@ $html = '
 $html .= '
                             <table class="table-bordered text-center border">
                                 <tr>
-                                    <td colspan="2" class="br-0"><center><img height="100" src="' .  $site_url . '/assets/images/logo.png" alt="logo" ></center></td>
-                                    <td colspan="4" class="p-0 bl-0"><h2 class="mb-0">' . $site_name . '<br/><a href="' . $site_url . '" target="_blank">(' . $domain . ')</a></h2></td>
+                                    <td colspan="1" class="br-0"><center><img height="100" src="' .  $site_url . '/assets/images/logo.png" alt="logo" ></center></td>
+                                    <td colspan="5" class="p-0 bl-0"></center><h2 class="mb-0">' . $site_name . '<br/><a href="' . $site_url . '" target="_blank">(' . $domain . ')</a></h2></center></td>
                                 </tr>
                                 <tr>
                                     <td colspan="6" class="p-0"><h5 class="mb-0">' . $site_address . '</h5></td>
