@@ -16,6 +16,10 @@ $aurl = $protocol . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
     <meta property="og:type" content="Website" />
     <meta property="og:locale" content="en_IN" />
     <meta property="og:locale:alternate" content="ta_IN" />
+    <meta name="revisit-after" content="10 Days">
+    <meta name="language" content="English">
+    <meta name="distribution" content="Global">
+    <meta name="web_author" content="Jagadeesh">
 
     <!-- ======== Page title ============ -->
     <title><?php echo (isset($meta_title)) ? $meta_title : $site_name ?></title>
@@ -27,6 +31,7 @@ $aurl = $protocol . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
     <meta property="og:description" content="<?php echo (isset($meta_description)) ? $meta_description : $site_name ?>" />
     <meta property="og:site_name" content="<?= $site_name ?>" />
     <link rel="canonical" href="<?php echo (isset($aurl)) ? $aurl : $site_url ?>" />
+    <meta name="copyright" content="<?= $site_name ?>">
 
     <!-- Fav Icon -->
     <link rel="shortcut icon" href="<?= $site_url ?>/assets/images/logo.png" type="image/x-icon">
@@ -37,6 +42,7 @@ $aurl = $protocol . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
     <link rel="stylesheet" href="<?= $site_url ?>/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= $site_url ?>/assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="<?= $site_url ?>/assets/css/owl.theme.default.min.css">
+    
     <link rel="stylesheet" href="<?= $site_url ?>/assets/css/swiper-bundle.min.css">
 </head>
 <script>

@@ -15,19 +15,19 @@
                 <div class="right">
                     <form class="form-group php-email-form" method="post" role="form" id="contact">
                         <div class="inner">
-                            <label for="">Name :</label>
-                            <input class="form-control" type="text" name="name" id="name" placeholder="Enter Your Name" required="" />
+                            <label for="fname">Name :</label>
+                            <input class="form-control" type="text" name="fname" id="fname" placeholder="Enter Your Name" required="" />
                         </div>
                         <div class="inner">
-                            <label for="">Email :</label>
+                            <label for="email">Email :</label>
                             <input class="form-control" type="email" name="email" id="email" placeholder="Enter Your Email" required="" />
                         </div>
                         <div class="inner">
-                            <label for="">Mobile Number :</label>
+                            <label for="phone">Mobile Number :</label>
                             <input class="form-control" type="number" name="phone" id="phone" placeholder="Enter Your Mobile Number" oninput="numvalitate()" required="" />
                         </div>
                         <div class="inner">
-                            <label for="">Message :</label>
+                            <label for="message">Message :</label>
                             <textarea class="form-control" id="message" name="message" rows="4" cols="50" placeholder="Enter Your Message"></textarea>
                         </div>
                         <input type="submit" class='btn' name="contactFormSubmit" value="Submit" id="submitBtn" readonly />
