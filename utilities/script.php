@@ -2,10 +2,10 @@
 <script src="<?= $site_url ?>/assets/js/bootstrap.min.js"></script>
 <script src="<?= $site_url ?>/assets/js/bootstrap.bundle.min.js"></script>
 <script src="<?= $site_url ?>/assets/js/owl.carousel.min.js"></script>
-<script src="<?= $admin_url ?>/assets/js/sweetalert2.all.min.js"></script>
 <script src="<?= $site_url ?>/assets/js/src.js"></script>
-<script src="<?= $site_url ?>/assets/js/swiper-bundle.min.js"></script>
 
+<script src="<?= $admin_url ?>/assets/js/sweetalert2.all.min.js"></script>
+<script src="<?= $site_url ?>/assets/js/swiper-bundle.min.js"></script>
 <script>
     // Auto-update cookie on resize
     let resizeTimeout;
@@ -28,7 +28,7 @@
     $("#contact").submit((event) => {
         $("#submitBtn").prop('disabled', true).val("Loading...");
         event.preventDefault();
-        let fname = $("#name").val().trim();
+        let fname = $("#fname").val().trim();
         let lname = '';
         let mail = $("#email").val().trim();
         let phone = $("#phone").val().trim();
