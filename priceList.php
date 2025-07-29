@@ -70,7 +70,7 @@ $html .= '
                                     <td colspan="6" class="p-0"><h5 class="mb-0">Whatsapp number: ' . $site_whatsapp_number . ', Mobile number: ' . $site_mobile_number . '</h5></td>
                                 </tr>
                                 <tr>
-                                    <td colspan="6" class="p-0"><h5 class="mb-0">Discount upto 80% offer! Hurry Up....</h5></td>
+                                    <td colspan="6" class="p-0"><h5 class="mb-0">Discount upto ' . $billing_discount . '% offer! Hurry Up....</h5></td>
                                 </tr>
                                 <thead class="text-uppercase bg-danger text-white">
                                     <tr>
