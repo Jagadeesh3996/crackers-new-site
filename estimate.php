@@ -161,7 +161,7 @@
                     $video = ($vid == "") ? "" : "$vid";
                   ?>
                     <tr>
-                      <td><img src=<?php echo $image ?> alt="<?php echo $name ?>" onclick="showPopUp(<?php echo $id ?>)" /></td>
+                      <td style="cursor: pointer;"><img src=<?php echo $image ?> alt="<?php echo $name ?>" onclick="showPopUp(<?php echo $id ?>)" /></td>
                       <td class="code" style="font-size: 16px;font-weight: 700 !important;"><?php echo $items['alignment'] ?></td>
                       <td class="prdname">
                         <p id="pcode_<?php echo $id ?>" class="mb-0"><span class="product pname_<?= $id ?>" id="<?= $id ?>"><?= $name ?></span> (<?php echo $type ?>)<br><?= $items['tamil_name'] ?></p>
@@ -169,12 +169,12 @@
                       <td class="w-mrp"><s style="color:red;"> &#8377; <?php echo number_format($mrp, 2) ?></s></td>
                       <td class="prdprice"> &#8377; <?php echo number_format($disprice, 2) ?></td>
                       <td>
-                        <div class="flex">
+                        <div class="flexbox">
                           <div class="mins flex" onclick="qty('minus', <?php echo $id ?>)"> - </div>
                           <input class="nop inp inp1" type="number" min="1" oninput="calc(<?php echo $id ?>)" id="qty_<?php echo $id ?>" value="" />
                           <div class="plus flex" onclick="qty('plus', <?php echo $id ?>)"> + </div>
-                          <input type="hidden" id="pename_<?php echo $id ?>" value="<?= $name ?> (<?php echo $type ?>)" />
-                          <input type="hidden" id="ptname_<?php echo $id ?>" value="<?= $items['tamil_name'] ?>" />
+                          <input type="hidden" id="pename_<?php echo $id ?>" value="<?= htmlspecialchars($name . " ($type)", ENT_QUOTES, 'UTF-8') ?>" />
+                          <input type="hidden" id="ptname_<?php echo $id ?>" value="<?= htmlspecialchars($items['tamil_name'], ENT_QUOTES, 'UTF-8') ?>" />
                           <input type="hidden" id="pimg_<?php echo $id ?>" value="<?php echo htmlspecialchars($items['images'], ENT_QUOTES, 'UTF-8') ?>" />
                           <input type="hidden" id="pvid_<?php echo $id ?>" value="<?php echo $video ?>" />
                           <input type="hidden" id="pid_<?php echo $id ?>" value="<?php echo $id ?>" />
@@ -182,7 +182,7 @@
                           <input type="hidden" id="pmrp_<?php echo $id ?>" value="<?php echo $mrp ?>" />
                           <input type="hidden" id="pdiscount_<?php echo $id ?>" value="<?php echo $discount ?>" />
                           <input type="hidden" id="pdisprice_<?php echo $id ?>" value="<?php echo $disprice ?>" />
-                          <input type="hidden" id="pcategory_<?php echo $id ?>" value="<?php echo $category ?>" />
+                          <input type="hidden" id="pcategory_<?php echo $id ?>" value="<?= htmlspecialchars($category, ENT_QUOTES, 'UTF-8') ?>" />
                           <input type="hidden" id="psubtotal_<?php echo $id ?>" value="" />
                           <input type="hidden" id="pnetsubtotal_<?php echo $id ?>" value="" />
                         </div>
@@ -233,7 +233,7 @@
                   $img = json_decode($items['images'])[0];
                   $vid = $items['url'];
                   $disprice = round($mrp - ($mrp * ($discount / 100)), 2);
-                  $image = ($img == "") ? $site_url . "/assets/img/logo.png" : $admin_url . "/uploads/" . $img;
+                  $image = ($img == "") ? $site_url . "/assets/images/logo.png" : $admin_url . "/uploads/" . $img;
                   $video = ($vid == "") ? "" : "$vid";
                   $bgcol = ($b % 2 == 0) ? "bg-box2" : "bg-box1";
                 ?>
@@ -241,7 +241,7 @@
                     <div class="card prdcard <?= $bgcol ?>">
                       <p class="acode p-1"><?php echo $items['alignment'] ?></p>
                       <p id="pcode_<?php echo $id ?>" class="pt-2 mx-4 pf-50 mb-0 text-center"><span class="product pname_<?= $id ?>" id="<?= $id ?>"><?= $name ?></span> (<?php echo $type ?>)<br><?= $items['tamil_name'] ?></p>
-                      <div class="d-flex justify-content-evenly align-items-center flex-wrap" style="justify-content: space-evenly;min-height:100px;">
+                      <div class="d-flex justify-content-evenly align-items-center flex-wrap" style="cursor: pointer;justify-content: space-evenly;min-height:100px;">
                         <img class="cimg" src=<?php echo $image ?> alt="<?php echo $name ?>" onclick="showPopUp(<?php echo $id ?>)" />
                         <div class="d-flex">
                           <p> &#8377; <?php echo number_format($disprice, 2) ?></p>
@@ -252,8 +252,8 @@
                           <div class="mins flex" onclick="qty('minus', <?php echo $id ?>)"> - </div>
                           <input type="number" class="nop pinp" oninput="calc(<?php echo $id ?>)" id="qty_<?php echo $id ?>" placeholder="qty" value="" />
                           <div class="plus flex" onclick="qty('plus', <?php echo $id ?>)"> + </div>
-                          <input type="hidden" id="pename_<?php echo $id ?>" value="<?= $name ?> (<?php echo $type ?>)" />
-                          <input type="hidden" id="ptname_<?php echo $id ?>" value="<?= $items['tamil_name'] ?>" />
+                          <input type="hidden" id="pename_<?php echo $id ?>" value="<?= htmlspecialchars($name . " ($type)", ENT_QUOTES, 'UTF-8') ?>" />
+                          <input type="hidden" id="ptname_<?php echo $id ?>" value="<?= htmlspecialchars($items['tamil_name'], ENT_QUOTES, 'UTF-8') ?>" />
                           <input type="hidden" id="pimg_<?php echo $id ?>" value="<?php echo htmlspecialchars($items['images'], ENT_QUOTES, 'UTF-8') ?>" />
                           <input type="hidden" id="pvid_<?php echo $id ?>" value="<?php echo $video ?>" />
                           <input type="hidden" id="pid_<?php echo $id ?>" value="<?php echo $id ?>" />
@@ -261,7 +261,7 @@
                           <input type="hidden" id="pmrp_<?php echo $id ?>" value="<?php echo $mrp ?>" />
                           <input type="hidden" id="pdiscount_<?php echo $id ?>" value="<?php echo $discount ?>" />
                           <input type="hidden" id="pdisprice_<?php echo $id ?>" value="<?php echo $disprice ?>" />
-                          <input type="hidden" id="pcategory_<?php echo $id ?>" value="<?php echo $category ?>" />
+                          <input type="hidden" id="pcategory_<?php echo $id ?>" value="<?= htmlspecialchars($category, ENT_QUOTES, 'UTF-8') ?>" />
                           <input type="hidden" id="psubtotal_<?php echo $id ?>" value="" />
                           <input type="hidden" id="pnetsubtotal_<?php echo $id ?>" value="" />
                         </div>

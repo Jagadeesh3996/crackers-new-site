@@ -14,7 +14,9 @@ input[type="number"] {
 }
 :root {
   --primary: #89201a;
-  --secondary: #acd14a;
+  --secondary: #febf26;
+  --bg-box1: #a8cbf4;
+  --bg-box2: #c3d5f5;
 }
 .bg-1 {
   background-color: var(--primary) !important;
@@ -278,7 +280,7 @@ h1 {
   align-items: center;
   justify-content: center;
 }
-.details div label{
+.details div label {
   width: 150px;
   font-weight: 700;
 }
@@ -305,11 +307,11 @@ h1 {
 
 /* tablet view */
 .bg-box1 {
-  background-color: #acd14a;
+  background-color: var(--bg-box1);
   margin-inline: 5px;
 }
 .bg-box2 {
-  background-color: #c6d777;
+  background-color: var(--bg-box2);
   margin-inline: 5px;
 }
 .prdcard {
@@ -494,8 +496,14 @@ h1 {
 .cat p {
   font-size: 16px;
   font-weight: bold !important;
+  color: #000 !important;
 }
 
+.flexbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /* ============== Responsive css ========================= */
 @media (max-width: 1200px) {
   .fixed {
@@ -642,22 +650,30 @@ h1 {
     max-width: 200px;
     max-height: 200px;
   }
+  .table td input {
+    padding: 10px 2px;
+  }
 }
 
 @media (max-width: 370px) {
   .table-headings th {
-    font-size: 8px !important;
+    font-size: 11px !important;
   }
   .table td {
-    font-size: 8px !important;
+    font-size: 11px !important;
+    padding: 5px 0px !important;
   }
-  .table td input {
-    padding: 0 !important;
+  .inp1 {
+    width: 40px;
   }
-  .inp {
-    width: 30px;
+  .inp2 {
+    width: 60px;
   }
   .overtotal {
     font-size: 15px;
+  }
+  .flexbox {
+    flex-direction: column;
+    gap: 5px;
   }
 }

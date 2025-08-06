@@ -67,6 +67,14 @@
                     </div>
                 </div>
             </div>
+            <div class="row rowgap">
+                <div class="col-12 text-center text-white">
+                    © <script>
+                        document.write(new Date().getFullYear())
+                    </script>
+                    Copyright: <?= $site_name ?>.  All Rights Reserved.
+                </div>
+            </div>
         </div>
     </div>
 
@@ -75,7 +83,7 @@
     </a>
 
     <?php if ($active != "cart.php" && $active != "orderreview.php") { ?>
-        <a href="<?= $site_url ?>/priceList/" target="_blank" class="floatlefta bounce2">
+        <a href="<?= $site_url ?>/pricelist/" target="_blank" class="floatlefta bounce2">
             <img src="<?= $site_url ?>/assets/images/download_price_list_button.png" style="height: 70px">
         </a>
     <?php } ?>
