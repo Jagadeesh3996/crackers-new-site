@@ -16,7 +16,7 @@
             $result = mysqli_query($conn, $query);
             while ($row = mysqli_fetch_array($result)) {
             ?>
-                <div class="item" style="background-image: url('<?= $admin_url ?>/uploads/homebanners/<?= $row['banner'] ?>')"></div>
+                <div class="item" style="background-image: url('<?= $admin_url ?>/uploads/<?= $row['banner'] ?>')"></div>
             <?php } ?>
         </div>
     </div>

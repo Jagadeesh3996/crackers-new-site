@@ -113,7 +113,7 @@
                             <div class="col-12 bg-1 text-light pt-3">
                                 <h4>Overall Total : &#8377; <span id="finalamt">0</span></h4>
                             </div>
-                            <div class="col-12 p-2">
+                            <div class="col-12 p-2 justify-content-between">
                                 <a href="<?= $site_url ?>/estimate/" class="btn btn-success">Continue Shopping</a>
                                 <input type="submit" class="btn btn-success bg-1 text-light" value="Confirm Order" readonly />
                             </div>

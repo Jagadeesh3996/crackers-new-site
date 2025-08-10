@@ -69,10 +69,7 @@
             </div>
             <div class="row rowgap">
                 <div class="col-12 text-center text-white">
-                    © <script>
-                        document.write(new Date().getFullYear())
-                    </script>
-                    Copyright: <?= $site_name ?>.  All Rights Reserved.
+                    © <?= date("Y"); ?> Copyright: <?= $site_name ?>.  All Rights Reserved.
                 </div>
             </div>
         </div>
