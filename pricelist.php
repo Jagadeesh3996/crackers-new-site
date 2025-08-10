@@ -1,9 +1,6 @@
 <?php
-
-// include($_SERVER['DOCUMENT_ROOT'] . '/kickvy/admin/utilities/db.php');
 include($_SERVER['DOCUMENT_ROOT'] . '/../newadmin/utilities/db.php');
-
-require('./dompdf/autoload.inc.php');
+require($_SERVER['DOCUMENT_ROOT'] . '/../newadmin/dompdf/autoload.inc.php');
 
 use Dompdf\Dompdf;
 use Dompdf\Options;
@@ -27,6 +24,7 @@ $html = '
                             body {
                                 font-family: "Noto Sans Tamil", sans-serif;
                                 font-style: normal;
+                                font-size: 12px;
                             }
                             table tr th,
                             table tr td{

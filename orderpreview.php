@@ -1,6 +1,4 @@
 <?php
-
-// include($_SERVER['DOCUMENT_ROOT'] . '/kickvy/admin/utilities/db.php');
 include($_SERVER['DOCUMENT_ROOT'] . '/../newadmin/utilities/db.php');
 
 // check url parameter  is set or not
