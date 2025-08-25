@@ -11,6 +11,7 @@ $aurl = $protocol . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="author" content="Jagadeesh">
     <meta name="robots" content="index, follow">
     <meta property="og:type" content="Website" />
@@ -30,8 +31,8 @@ $aurl = $protocol . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
     <meta property="og:image" content="<?php echo $site_url . '/assets/images/logo.png'; ?>" />
     <meta property="og:description" content="<?php echo (isset($meta_description)) ? $meta_description : $site_name ?>" />
     <meta property="og:site_name" content="<?= $site_name ?>" />
-    <link rel="canonical" href="<?php echo (isset($aurl)) ? $aurl : $site_url ?>" />
     <meta name="copyright" content="<?= $site_name ?>">
+    <link rel="canonical" href="<?php echo (isset($aurl)) ? $aurl : $site_url ?>" />
 
     <!-- Fav Icon -->
     <link rel="shortcut icon" href="<?= $site_url ?>/assets/images/logo.png" type="image/x-icon">
@@ -42,7 +43,7 @@ $aurl = $protocol . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
     <link rel="stylesheet" href="<?= $site_url ?>/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= $site_url ?>/assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="<?= $site_url ?>/assets/css/owl.theme.default.min.css">
-    
+
     <link rel="stylesheet" href="<?= $site_url ?>/assets/css/swiper-bundle.min.css">
 </head>
 <script>
