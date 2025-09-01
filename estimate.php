@@ -145,9 +145,9 @@
               ?>
                   <tr>
                     <td colspan="7" class="fw-20 cat">
-                      <p style="margin:0;font-size: 16px;font-weight: 700 !important;" id="cat_<?php echo $c_id ?>"><?php echo $category ?> ( <?php echo $discount ? $discount . "% discount" : "Net Price"; ?> )</p>
+                      <p style="margin:0;font-size: 16px;font-weight: 700 !important;" id="cat_<?php echo $c_id ?>"><?php echo $category2 ?> ( <?php echo $discount ? $discount . "% discount" : "Net Price"; ?> )</p>
                     </td>
-                    <input type="hidden" class="category" id="<?php echo $c_id ?>" value="<?php echo htmlspecialchars($category, ENT_QUOTES, 'UTF-8') ?>" />
+                    <input type="hidden" class="category" id="<?php echo $c_id ?>" value="<?php echo $category2 ?>" />
                   </tr>
                   <?php
                   while ($items = mysqli_fetch_array($resultitems)) {
@@ -183,7 +183,7 @@
                           <input type="hidden" id="pmrp_<?php echo $id ?>" value="<?php echo $mrp ?>" />
                           <input type="hidden" id="pdiscount_<?php echo $id ?>" value="<?php echo $discount ?>" />
                           <input type="hidden" id="pdisprice_<?php echo $id ?>" value="<?php echo $disprice ?>" />
-                          <input type="hidden" id="pcategory_<?php echo $id ?>" value="<?= htmlspecialchars($category, ENT_QUOTES, 'UTF-8') ?>" />
+                          <input type="hidden" id="pcategory_<?php echo $id ?>" value="<?php echo $category2 ?>" />
                           <input type="hidden" id="psubtotal_<?php echo $id ?>" value="" />
                           <input type="hidden" id="pnetsubtotal_<?php echo $id ?>" value="" />
                         </div>
@@ -219,9 +219,9 @@
           ?>
               <div>
                 <div class="fw-20 cat text-center">
-                  <p class="mb-0 py-1" id="cat_<?php echo $c_id ?>"><?php echo $category ?> ( <?php echo $discount ? $discount . "% discount" : "Net Price"; ?> )</p>
+                  <p class="mb-0 py-1" id="cat_<?php echo $c_id ?>"><?php echo $category2 ?> ( <?php echo $discount ? $discount . "% discount" : "Net Price"; ?> )</p>
                 </div>
-                <input type="hidden" class="category" id="<?php echo $c_id ?>" value="<?php echo htmlspecialchars($category, ENT_QUOTES, 'UTF-8') ?>" />
+                <input type="hidden" class="category" id="<?php echo $c_id ?>" value="<?php echo $category2 ?>" />
               </div>
               <div class="row w-100 m-0">
                 <?php
@@ -263,7 +263,7 @@
                           <input type="hidden" id="pmrp_<?php echo $id ?>" value="<?php echo $mrp ?>" />
                           <input type="hidden" id="pdiscount_<?php echo $id ?>" value="<?php echo $discount ?>" />
                           <input type="hidden" id="pdisprice_<?php echo $id ?>" value="<?php echo $disprice ?>" />
-                          <input type="hidden" id="pcategory_<?php echo $id ?>" value="<?= htmlspecialchars($category, ENT_QUOTES, 'UTF-8') ?>" />
+                          <input type="hidden" id="pcategory_<?php echo $id ?>" value="<?php echo $category2 ?>" />
                           <input type="hidden" id="psubtotal_<?php echo $id ?>" value="" />
                           <input type="hidden" id="pnetsubtotal_<?php echo $id ?>" value="" />
                         </div>
