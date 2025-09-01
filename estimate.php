@@ -136,8 +136,9 @@
               while ($row = mysqli_fetch_array($result)) {
                 $c_id = $row['id'];
                 $category = $row['name'];
+                $category2 = mysqli_real_escape_string($conn, $row['name']);
                 $discount  = $row['discount'] ? $row['discount'] : "0";
-                $queryitems = "SELECT * FROM tbl_product WHERE category = '$category' AND status = 1 GROUP BY CAST(SUBSTRING_INDEX(alignment, ' ', 1) AS UNSIGNED), SUBSTRING(alignment, LOCATE(' ', alignment) + 1)";
+                $queryitems = "SELECT * FROM tbl_product WHERE category = '$category2' AND status = 1 GROUP BY CAST(SUBSTRING_INDEX(alignment, ' ', 1) AS UNSIGNED), SUBSTRING(alignment, LOCATE(' ', alignment) + 1)";
                 $resultitems = mysqli_query($conn, $queryitems);
                 $row_count = mysqli_num_rows($resultitems);
                 if ($row_count !== 0) {
@@ -146,7 +147,7 @@
                     <td colspan="7" class="fw-20 cat">
                       <p style="margin:0;font-size: 16px;font-weight: 700 !important;" id="cat_<?php echo $c_id ?>"><?php echo $category ?> ( <?php echo $discount ? $discount . "% discount" : "Net Price"; ?> )</p>
                     </td>
-                    <input type="hidden" class="category" id="<?php echo $c_id ?>" value="<?= htmlspecialchars($category . " ($type)", ENT_QUOTES, 'UTF-8') ?>" />
+                    <input type="hidden" class="category" id="<?php echo $c_id ?>" value="<?php echo htmlspecialchars($category, ENT_QUOTES, 'UTF-8') ?>" />
                   </tr>
                   <?php
                   while ($items = mysqli_fetch_array($resultitems)) {
@@ -208,8 +209,9 @@
           while ($row = mysqli_fetch_array($result)) {
             $c_id = $row['id'];
             $category = $row['name'];
+            $category2 = mysqli_real_escape_string($conn, $row['name']);
             $discount  = $row['discount'] ? $row['discount'] : "0";
-            $queryitems = "SELECT * FROM tbl_product WHERE category = '$category' AND status = 1 GROUP BY CAST(SUBSTRING_INDEX(alignment, ' ', 1) AS UNSIGNED), SUBSTRING(alignment, LOCATE(' ', alignment) + 1)";
+            $queryitems = "SELECT * FROM tbl_product WHERE category = '$category2' AND status = 1 GROUP BY CAST(SUBSTRING_INDEX(alignment, ' ', 1) AS UNSIGNED), SUBSTRING(alignment, LOCATE(' ', alignment) + 1)";
             $resultitems = mysqli_query($conn, $queryitems);
             $row_count = mysqli_num_rows($resultitems);
             if ($row_count !== 0) {
@@ -219,7 +221,7 @@
                 <div class="fw-20 cat text-center">
                   <p class="mb-0 py-1" id="cat_<?php echo $c_id ?>"><?php echo $category ?> ( <?php echo $discount ? $discount . "% discount" : "Net Price"; ?> )</p>
                 </div>
-                <input type="hidden" class="category" id="<?php echo $c_id ?>" value="<?= htmlspecialchars($category . " ($type)", ENT_QUOTES, 'UTF-8') ?>" />
+                <input type="hidden" class="category" id="<?php echo $c_id ?>" value="<?php echo htmlspecialchars($category, ENT_QUOTES, 'UTF-8') ?>" />
               </div>
               <div class="row w-100 m-0">
                 <?php
